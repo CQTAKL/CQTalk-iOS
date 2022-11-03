@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129829140BB600DE81BE /* CQTalkApp.swift */; };
+		91B0129B29140BB600DE81BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129A29140BB600DE81BE /* ContentView.swift */; };
+		91B0129D29140BB700DE81BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B0129C29140BB700DE81BE /* Assets.xcassets */; };
+		91B012A129140BB700DE81BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B012A029140BB700DE81BE /* Preview Assets.xcassets */; };
+		91B012AB29140BB700DE81BE /* CQTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012AA29140BB700DE81BE /* CQTalkTests.swift */; };
+		91B012B529140BB700DE81BE /* CQTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012B429140BB700DE81BE /* CQTalkUITests.swift */; };
+		91B012B729140BB700DE81BE /* CQTalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012B629140BB700DE81BE /* CQTalkUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91B012A729140BB700DE81BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91B0128D29140BB600DE81BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91B0129429140BB600DE81BE;
+			remoteInfo = CQTalk;
+		};
+		91B012B129140BB700DE81BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 91B0128D29140BB600DE81BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 91B0129429140BB600DE81BE;
+			remoteInfo = CQTalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		91B0129529140BB600DE81BE /* CQTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B0129829140BB600DE81BE /* CQTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkApp.swift; sourceTree = "<group>"; };
+		91B0129A29140BB600DE81BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		91B0129C29140BB700DE81BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		91B0129E29140BB700DE81BE /* CQTalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CQTalk.entitlements; sourceTree = "<group>"; };
+		91B012A029140BB700DE81BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		91B012A629140BB700DE81BE /* CQTalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CQTalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B012AA29140BB700DE81BE /* CQTalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkTests.swift; sourceTree = "<group>"; };
+		91B012B029140BB700DE81BE /* CQTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CQTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B012B429140BB700DE81BE /* CQTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkUITests.swift; sourceTree = "<group>"; };
+		91B012B629140BB700DE81BE /* CQTalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		91B0129229140BB600DE81BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012A329140BB700DE81BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012AD29140BB700DE81BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91B0128C29140BB600DE81BE = {
+			isa = PBXGroup;
+			children = (
+				91B0129729140BB600DE81BE /* CQTalk */,
+				91B012A929140BB700DE81BE /* CQTalkTests */,
+				91B012B329140BB700DE81BE /* CQTalkUITests */,
+				91B0129629140BB600DE81BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		91B0129629140BB600DE81BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91B0129529140BB600DE81BE /* CQTalk.app */,
+				91B012A629140BB700DE81BE /* CQTalkTests.xctest */,
+				91B012B029140BB700DE81BE /* CQTalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		91B0129729140BB600DE81BE /* CQTalk */ = {
+			isa = PBXGroup;
+			children = (
+				91B0129829140BB600DE81BE /* CQTalkApp.swift */,
+				91B0129A29140BB600DE81BE /* ContentView.swift */,
+				91B0129C29140BB700DE81BE /* Assets.xcassets */,
+				91B0129E29140BB700DE81BE /* CQTalk.entitlements */,
+				91B0129F29140BB700DE81BE /* Preview Content */,
+			);
+			path = CQTalk;
+			sourceTree = "<group>";
+		};
+		91B0129F29140BB700DE81BE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				91B012A029140BB700DE81BE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		91B012A929140BB700DE81BE /* CQTalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				91B012AA29140BB700DE81BE /* CQTalkTests.swift */,
+			);
+			path = CQTalkTests;
+			sourceTree = "<group>";
+		};
+		91B012B329140BB700DE81BE /* CQTalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				91B012B429140BB700DE81BE /* CQTalkUITests.swift */,
+				91B012B629140BB700DE81BE /* CQTalkUITestsLaunchTests.swift */,
+			);
+			path = CQTalkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		91B0129429140BB600DE81BE /* CQTalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91B012BA29140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalk" */;
+			buildPhases = (
+				91B0129129140BB600DE81BE /* Sources */,
+				91B0129229140BB600DE81BE /* Frameworks */,
+				91B0129329140BB600DE81BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CQTalk;
+			productName = CQTalk;
+			productReference = 91B0129529140BB600DE81BE /* CQTalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		91B012A529140BB700DE81BE /* CQTalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91B012BD29140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalkTests" */;
+			buildPhases = (
+				91B012A229140BB700DE81BE /* Sources */,
+				91B012A329140BB700DE81BE /* Frameworks */,
+				91B012A429140BB700DE81BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91B012A829140BB700DE81BE /* PBXTargetDependency */,
+			);
+			name = CQTalkTests;
+			productName = CQTalkTests;
+			productReference = 91B012A629140BB700DE81BE /* CQTalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		91B012AF29140BB700DE81BE /* CQTalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 91B012C029140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalkUITests" */;
+			buildPhases = (
+				91B012AC29140BB700DE81BE /* Sources */,
+				91B012AD29140BB700DE81BE /* Frameworks */,
+				91B012AE29140BB700DE81BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91B012B229140BB700DE81BE /* PBXTargetDependency */,
+			);
+			name = CQTalkUITests;
+			productName = CQTalkUITests;
+			productReference = 91B012B029140BB700DE81BE /* CQTalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91B0128D29140BB600DE81BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					91B0129429140BB600DE81BE = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					91B012A529140BB700DE81BE = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 91B0129429140BB600DE81BE;
+					};
+					91B012AF29140BB700DE81BE = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 91B0129429140BB600DE81BE;
+					};
+				};
+			};
+			buildConfigurationList = 91B0129029140BB600DE81BE /* Build configuration list for PBXProject "CQTalk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 91B0128C29140BB600DE81BE;
+			productRefGroup = 91B0129629140BB600DE81BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				91B0129429140BB600DE81BE /* CQTalk */,
+				91B012A529140BB700DE81BE /* CQTalkTests */,
+				91B012AF29140BB700DE81BE /* CQTalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		91B0129329140BB600DE81BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B012A129140BB700DE81BE /* Preview Assets.xcassets in Resources */,
+				91B0129D29140BB700DE81BE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012A429140BB700DE81BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012AE29140BB700DE81BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		91B0129129140BB600DE81BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B0129B29140BB600DE81BE /* ContentView.swift in Sources */,
+				91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012A229140BB700DE81BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B012AB29140BB700DE81BE /* CQTalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B012AC29140BB700DE81BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91B012B729140BB700DE81BE /* CQTalkUITestsLaunchTests.swift in Sources */,
+				91B012B529140BB700DE81BE /* CQTalkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		91B012A829140BB700DE81BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91B0129429140BB600DE81BE /* CQTalk */;
+			targetProxy = 91B012A729140BB700DE81BE /* PBXContainerItemProxy */;
+		};
+		91B012B229140BB700DE81BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 91B0129429140BB600DE81BE /* CQTalk */;
+			targetProxy = 91B012B129140BB700DE81BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		91B012B829140BB700DE81BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		91B012B929140BB700DE81BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		91B012BB29140BB700DE81BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CQTalk/CQTalk.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CQTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		91B012BC29140BB700DE81BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CQTalk/CQTalk.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CQTalk/Preview Content\"";
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91B012BE29140BB700DE81BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CQTalk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CQTalk";
+			};
+			name = Debug;
+		};
+		91B012BF29140BB700DE81BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CQTalk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CQTalk";
+			};
+			name = Release;
+		};
+		91B012C129140BB700DE81BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CQTalk;
+			};
+			name = Debug;
+		};
+		91B012C229140BB700DE81BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 24Q962SK3B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.haren724.CQTalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CQTalk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		91B0129029140BB600DE81BE /* Build configuration list for PBXProject "CQTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B012B829140BB700DE81BE /* Debug */,
+				91B012B929140BB700DE81BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91B012BA29140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B012BB29140BB700DE81BE /* Debug */,
+				91B012BC29140BB700DE81BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91B012BD29140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B012BE29140BB700DE81BE /* Debug */,
+				91B012BF29140BB700DE81BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91B012C029140BB700DE81BE /* Build configuration list for PBXNativeTarget "CQTalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91B012C129140BB700DE81BE /* Debug */,
+				91B012C229140BB700DE81BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 91B0128D29140BB600DE81BE /* Project object */;
+}
