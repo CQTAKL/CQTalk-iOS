@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var appViewModel = AppViewModel(myModel: AppModel())
+    @State var launchSeconds = 5
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if launchSeconds > 0 && appViewModel.showLaunchScreen {
+            LaunchScreenView(seconds: $launchSeconds)
+                .onAppear {
+                    let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+                        withAnimation(.default.speed(0.5)) {
+                            launchSeconds -= 1
+                        }
+                    }
+                    if launchSeconds <= 0 {
+                        timer.invalidate()
+                    }
+                }
+        } else {
+            HomeView()
+                .onAppear { launchSeconds = 0 }
+                .environmentObject(appViewModel)
         }
-        .padding()
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
