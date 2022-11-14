@@ -14,25 +14,26 @@ struct VideoPlayerView: View {
 //    }
     
     var body: some View {
-        ScrollViewReader { proxy in
-            ScrollView {
-//                Button("Scroll to Bottom") {
+        Text("")
+//        ScrollViewReader { proxy in
+//            ScrollView {
+////                Button("Scroll to Bottom") {
+////                    withAnimation {
+////                        proxy.scrollTo(bottomID)
+////                    }
+////                }
+////                .id(topID)
+//                ForEach(0 ..< 10) { _ in
+//                    ClipView().frame(height: UIScreen.main.bounds.height)
+//                }
+//                Button("Top") {
 //                    withAnimation {
-//                        proxy.scrollTo(bottomID)
+//                        proxy.scrollTo(topID)
 //                    }
 //                }
-//                .id(topID)
-                ForEach(0 ..< 10) { _ in
-                    ClipView().frame(height: UIScreen.main.bounds.height)
-                }
-                Button("Top") {
-                    withAnimation {
-                        proxy.scrollTo(topID)
-                    }
-                }
-                .id(bottomID)
-            }
-        }.colorScheme(.dark)
+//                .id(bottomID)
+//            }
+//        }.colorScheme(.dark)
     }
 }
 

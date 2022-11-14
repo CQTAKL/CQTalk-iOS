@@ -19,17 +19,13 @@ struct HomePageView: View {
                     Text("error")
                 }
             }.toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    if selection != 3 {
-                        Image("chuangqi-logo").resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                            .padding(.top)
-                    }
-                }
-                
                 ToolbarItem(placement: .principal) {
                     HStack {
+                        Image("chuangqi-logo").resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .padding(6)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                        Spacer()
                         VStack(spacing: 0) {
                             Button { withAnimation { selection = 0 } } label: {
                                 Text(selection == 0 ? "**每日打卡**" : "每日打卡")
@@ -71,6 +67,7 @@ struct HomePageView: View {
                                     .transition(.opacity)
                             }
                         }
+                        Spacer()
                     }.buttonStyle(.plain)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
