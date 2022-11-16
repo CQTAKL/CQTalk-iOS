@@ -110,6 +110,9 @@ struct LoginView: View {
                     }
                 }
         }.sheet(isPresented: $viewModel.showLoginDebugDetail) { ZstuSsoLoginDebugDetailView(viewModel: viewModel) }
+            .alert(isPresented: $viewModel.isLoginFailed, error: viewModel.loginError) {
+                Text("OK")
+            }
     }
 }
 
@@ -166,11 +169,13 @@ struct ZstuSsoLoginView: View {
             VStack(spacing: 20) {
                 VStack {
                     TextField("请输入学工号", text: $viewModel.stuid)
+                        .opacity(viewModel.loginBrightness)
                     Divider()
                 }
                 VStack {
                     HStack {
                         SecureField("请输入密码", text: $viewModel.password)
+                            .opacity(viewModel.loginBrightness)
                     }
                     Divider()
                 }
@@ -185,18 +190,18 @@ struct ZstuSsoLoginView: View {
                     Text("登录").bold().foregroundColor(.white)
                     Spacer()
                 }.padding(.vertical, 8)
-                    .background(Color(red: 0.18, green: 0.34, blue: 0.9 ))
+                    .background(Color(red: 0.18, green: 0.34, blue: 0.9))
                     .clipShape(RoundedRectangle(cornerRadius: 32.0))
                     .padding(.horizontal)
                     .shadow(color: Color(red: 0.7, green: 0.7, blue: 0.97), radius: 8)
-            }
+            }.opacity(viewModel.loginBrightness)
             Spacer()
             Text("Copyright © 2019 Zhejiang Sci-Tech University. All Rights Reserved.").font(.caption)
                 .lineLimit(1)
                 .allowsTightening(true)
                 .minimumScaleFactor(0.5)
                 .padding(.horizontal)
-        }
+        }.disabled(viewModel.isLogging ? true : false)
     }
 }
 
