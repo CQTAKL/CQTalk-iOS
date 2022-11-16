@@ -26,7 +26,7 @@ import JavaScriptCore
     }
     
     enum LoginError: LocalizedError {
-        case wrongUsernameOrPassword, unknownError
+        case wrongUsernameOrPassword, unknownError, timeOut
         
         var errorDescription: String? {
             switch self {
@@ -34,6 +34,8 @@ import JavaScriptCore
                 return "账号或密码错误"
             case .unknownError:
                 return "未知错误"
+            case .timeOut:
+                return "请求超时，请检查网络状态"
             }
         }
     }
@@ -44,13 +46,21 @@ import JavaScriptCore
     
     @Published var isLoginFailed = false
     @Published var isAgreedEULA = false
-    @Published var isLogging = false; var loginBrightness: Double { isLogging ? 0.5 : 1}
+    @Published var isLogging = false; var loginOpacity: Double { isLogging ? 0.5 : 1 }
     @Published var showNeedAgree = false
     @Published var showLoginDebugDetail = false
-    @Published var userinfo = ZstuSsoUserInfo()
+    @Published var userinfo = ZstuSsoUserInfo() {
+        didSet {
+            nickname = userinfo.data.XM + "同学"
+        }
+    }
     @Published var loginError: LoginError?
+    
+    @AppStorage("Nickname") var nickname = ""
     @AppStorage("StuID") var stuid = ""
     @AppStorage("Password") var password = ""
+    
+    @Environment(\.dismiss) private var dismiss
     
     private func loginHasFailed(becauseOf error: LoginError) {
         loginError = error
@@ -59,23 +69,23 @@ import JavaScriptCore
 
     func login() async {
         let url = URL(string: "https://sso.zstu.edu.cn/login")!
-           let username: String = stuid
-           let password: String = password
-           var croypto: String = ""
-           var cpasswd: String = ""
-           var execution: String = ""
-            var objectId: String = ""
+        let username: String = stuid
+        let password: String = password
+        var croypto: String = ""
+        var cpasswd: String = ""
+        var execution: String = ""
+        var objectId: String = ""
+        var configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 5
+        configuration.httpShouldSetCookies = true
            
-           var configuration = URLSessionConfiguration.default
-           configuration.timeoutIntervalForRequest = 5
-           configuration.httpShouldSetCookies = true
-           
-           var session = URLSession(configuration: configuration)
+        var session = URLSession(configuration: configuration)
         
         defer {
-            isLogging = false
+            session.configuration.httpCookieStorage?.removeCookies(since: Date.distantPast)
+            withAnimation { isLogging = false }
         }
-        isLogging = true
+        withAnimation { isLogging = true }
            
            do {
                let (data, _) = try await session.data(from: url)
@@ -93,8 +103,11 @@ import JavaScriptCore
             croypto = "WD2YtkaRYs4="
             execution = "43135687-a7c2-47e8-9601-e58d44db1f05_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"
     //        print(croypto, execution)
+           } catch URLError.timedOut {
+               print("timeout")
+               loginError = .timeOut
+               return
            } catch {
-               
                print("error response \(error)")
                return
            }

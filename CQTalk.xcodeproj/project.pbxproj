@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192B3F72925018300239CF6 /* MyViewModel.swift */; };
 		919EB433291FE750001E59DF /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919EB432291FE750001E59DF /* LinksViewModel.swift */; };
 		91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129829140BB600DE81BE /* CQTalkApp.swift */; };
 		91B0129B29140BB600DE81BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129A29140BB600DE81BE /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9192B3F72925018300239CF6 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		919EB432291FE750001E59DF /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
 		91B0129529140BB600DE81BE /* CQTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B0129829140BB600DE81BE /* CQTalkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkApp.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				91B9980D29140DCA000646C1 /* AppViewModel.swift */,
 				919EB432291FE750001E59DF /* LinksViewModel.swift */,
 				91CDC8612922951100B0D693 /* LoginViewModel.swift */,
+				9192B3F72925018300239CF6 /* MyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				91B9981D29140DE0000646C1 /* MyView.swift in Sources */,
 				91B9982629140DF2000646C1 /* PostSearchView.swift in Sources */,
 				91B9982829140DF2000646C1 /* HomePageView.swift in Sources */,
+				9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */,
 				91B9982D29140E06000646C1 /* QRCodeScannerView.swift in Sources */,
 				91B9981C29140DE0000646C1 /* ChatView.swift in Sources */,
 				91B9982A29140DF2000646C1 /* LinksView.swift in Sources */,

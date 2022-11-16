@@ -40,8 +40,8 @@ struct HomeView: View {
             .brightness(homeViewModel.model.showPostingPanel ? -0.25 : 0)
             .labelStyle(HorizonalLabelStyle())
             .fullScreenCover(isPresented: $homeViewModel.model.needsLogin) {
-              LoginView()
-              }
+                LoginView()
+            }
             .overlay {
                 NavigationLink("", isActive: $homeViewModel.model.showPref) {
                     PreferenceView()

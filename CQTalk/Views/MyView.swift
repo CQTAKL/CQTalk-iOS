@@ -3,6 +3,7 @@ import SwiftUI
 struct MyView: View {
     @EnvironmentObject var myViewModel: AppViewModel
     @State var showQRCodeScanner = false
+    @StateObject var viewModel = MyViewModel()
     
     var body: some View {
         NavigationView {
@@ -16,7 +17,7 @@ struct MyView: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Image(systemName: "crown.fill")
-                            Text("嘉然今天吃陈瑞").bold()
+                            Text(viewModel.nickname).bold()
                             Image(systemName: "figure.stand") // gender
                         }
                         HStack {

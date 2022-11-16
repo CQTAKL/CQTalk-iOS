@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var loginViewModel: AppViewModel
+    @EnvironmentObject var appViewModel: AppViewModel
     @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
@@ -24,8 +24,8 @@ struct LoginView: View {
                         Picker("区号", selection: .constant(0)) {
                             Text("+86")
                         }
-                        TextField("请输入手机号", text: $loginViewModel.model.styledPhoneNumber)
-                            .onChange(of: loginViewModel.model.styledPhoneNumber) { _ in
+                        TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
+                            .onChange(of: appViewModel.model.styledPhoneNumber) { _ in
                                 
                             }
                     }
@@ -47,11 +47,11 @@ struct LoginView: View {
                         Spacer()
                         Text("获取短信验证码")
                         Spacer()
-                    }.padding(.vertical, 8)
+                    }.padding(.vertical, 12)
                         .foregroundColor(.white)
                         .background(Color.accentColor)
                         .clipShape(RoundedRectangle(cornerRadius: 4.0))
-                }.disabled(loginViewModel.checkPhoneNumberFormat ? false : true)
+                }.disabled(appViewModel.checkPhoneNumberFormat ? false : true)
                 
                 HStack(spacing: 0) {
                     Toggle(" ", isOn: $viewModel.isAgreedEULA).toggleStyle(CheckboxToggleStyle()).padding(.trailing, 2)
@@ -67,7 +67,7 @@ struct LoginView: View {
                     Button { } label: {
                         HStack {
                             Spacer()
-                            Label("Sign in with Apple", systemImage: "apple.logo").padding(.vertical, 8)
+                            Label("Sign in with Apple", systemImage: "apple.logo").padding(.vertical, 10)
                                 .padding(.horizontal)
                             Spacer()
                         }.foregroundColor(colorScheme == .dark ? .black : .white)
@@ -79,7 +79,7 @@ struct LoginView: View {
                     }, label: {
                         HStack {
                             Spacer()
-                            Label("zstu sso", systemImage: "link").padding(.vertical, 8)
+                            Label("zstu sso", systemImage: "link").padding(.vertical, 10)
                                 .padding(.horizontal)
                             Spacer()
                         }.foregroundColor(.white)
@@ -90,7 +90,7 @@ struct LoginView: View {
             }.padding()
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
-                        Button { loginViewModel.cancelLogin() } label: {
+                        Button { appViewModel.cancelLogin() } label: {
                             Image(systemName: "xmark")
                         }.foregroundColor(.secondary)
                     }
@@ -136,6 +136,7 @@ struct ZstuSsoLoginView: View {
     @State var showPasswd = false
     @ObservedObject var viewModel: LoginViewModel
     @State var proxy: GeometryProxy?
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -169,13 +170,13 @@ struct ZstuSsoLoginView: View {
             VStack(spacing: 20) {
                 VStack {
                     TextField("请输入学工号", text: $viewModel.stuid)
-                        .opacity(viewModel.loginBrightness)
+                        .opacity(viewModel.loginOpacity)
                     Divider()
                 }
                 VStack {
                     HStack {
                         SecureField("请输入密码", text: $viewModel.password)
-                            .opacity(viewModel.loginBrightness)
+                            .opacity(viewModel.loginOpacity)
                     }
                     Divider()
                 }
@@ -194,7 +195,7 @@ struct ZstuSsoLoginView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 32.0))
                     .padding(.horizontal)
                     .shadow(color: Color(red: 0.7, green: 0.7, blue: 0.97), radius: 8)
-            }.opacity(viewModel.loginBrightness)
+            }.opacity(viewModel.loginOpacity)
             Spacer()
             Text("Copyright © 2019 Zhejiang Sci-Tech University. All Rights Reserved.").font(.caption)
                 .lineLimit(1)
@@ -202,6 +203,16 @@ struct ZstuSsoLoginView: View {
                 .minimumScaleFactor(0.5)
                 .padding(.horizontal)
         }.disabled(viewModel.isLogging ? true : false)
+            .overlay {
+                if viewModel.isLogging {
+                    VStack {
+                        ProgressView().scaleEffect(2.0).padding()
+                        Text("加载中......")
+                    }.padding()
+                        .background(.regularMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                }
+            }
     }
 }
 
