@@ -31,6 +31,7 @@
 		91B9982929140DF2000646C1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982329140DF2000646C1 /* PostsView.swift */; };
 		91B9982A29140DF2000646C1 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982429140DF2000646C1 /* LinksView.swift */; };
 		91B9982D29140E06000646C1 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982C29140E06000646C1 /* QRCodeScannerView.swift */; };
+		91CDC8622922951100B0D693 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CDC8612922951100B0D693 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		91B9982329140DF2000646C1 /* PostsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		91B9982429140DF2000646C1 /* LinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
 		91B9982C29140E06000646C1 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		91CDC8612922951100B0D693 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			children = (
 				91B9980D29140DCA000646C1 /* AppViewModel.swift */,
 				919EB432291FE750001E59DF /* LinksViewModel.swift */,
+				91CDC8612922951100B0D693 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				91B9982D29140E06000646C1 /* QRCodeScannerView.swift in Sources */,
 				91B9981C29140DE0000646C1 /* ChatView.swift in Sources */,
 				91B9982A29140DF2000646C1 /* LinksView.swift in Sources */,
+				91CDC8622922951100B0D693 /* LoginViewModel.swift in Sources */,
 				91B9981929140DE0000646C1 /* HomeView.swift in Sources */,
 				91B9981729140DE0000646C1 /* LaunchScreenView.swift in Sources */,
 				91B9981B29140DE0000646C1 /* PostSomethingView.swift in Sources */,

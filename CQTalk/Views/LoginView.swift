@@ -2,9 +2,8 @@ import SwiftUI
 
 struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
-    @State var isAgreedEULA = false
-    @State var showNeedAgree = false
     @EnvironmentObject var loginViewModel: AppViewModel
+    @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
         NavigationView {
@@ -36,11 +35,11 @@ struct LoginView: View {
                 Spacer().frame(maxHeight: 40)
                 
                 Button {
-                    if isAgreedEULA {
+                    if viewModel.isAgreedEULA {
                         
                     } else {
                         withAnimation {
-                            showNeedAgree = true
+                            viewModel.showNeedAgree = true
                         }
                     }
                 } label: {
@@ -55,7 +54,7 @@ struct LoginView: View {
                 }.disabled(loginViewModel.checkPhoneNumberFormat ? false : true)
                 
                 HStack(spacing: 0) {
-                    Toggle(" ", isOn: $isAgreedEULA).toggleStyle(CheckboxToggleStyle()).padding(.trailing, 2)
+                    Toggle(" ", isOn: $viewModel.isAgreedEULA).toggleStyle(CheckboxToggleStyle()).padding(.trailing, 2)
                     Group {
                         Text("已阅读并同意")
                         Link("“用户协议”", destination: URL(string: "https://baidu.com")!)
@@ -76,7 +75,7 @@ struct LoginView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 4.0))
                     }
                     NavigationLink(destination: {
-                        ZstuSsoLoginView()
+                        ZstuSsoLoginView(viewModel: viewModel)
                     }, label: {
                         HStack {
                             Spacer()
@@ -97,20 +96,20 @@ struct LoginView: View {
                     }
                 }
                 .overlay {
-                    if showNeedAgree {
+                    if viewModel.showNeedAgree {
                         VStack {
                             Text("asdf")
                             HStack {
                                 Button("agree") {
-                                    isAgreedEULA = true
-                                    showNeedAgree.toggle()
+                                    viewModel.isAgreedEULA = true
+                                    viewModel.showNeedAgree.toggle()
                                 }
                             }
                         }.frame(minWidth: 100, minHeight: 60)
                         .background(Color.green)
                     }
                 }
-        }
+        }.sheet(isPresented: $viewModel.showLoginDebugDetail) { ZstuSsoLoginDebugDetailView(viewModel: viewModel) }
     }
 }
 
@@ -131,8 +130,8 @@ struct PhoneNumberLoginView: View {
 }
 
 struct ZstuSsoLoginView: View {
-    @EnvironmentObject var ZstuSsoLoginViewModel: AppViewModel
     @State var showPasswd = false
+    @ObservedObject var viewModel: LoginViewModel
     @State var proxy: GeometryProxy?
     
     var body: some View {
@@ -141,72 +140,46 @@ struct ZstuSsoLoginView: View {
                 Image("zstu.sso.login.background").resizable()
                     .aspectRatio(contentMode: .fit)
                     .overlay {
-                        Color(red: 0.18, green: 0.34, blue: 0.9 ).opacity(0.75)
-                    }
-                    .overlay(GeometryReader { proxy -> AnyView in
-                        DispatchQueue.main.async {
-                            self.proxy = proxy
-                            print(proxy.size)
-                        }
-                        return AnyView(EmptyView())
-                    })
-//                    .clipShape(Path { path in
-//                        path.move(to: CGPoint(x: (proxy?.size.width ?? 0) / 2, y: 0))
-//                        path.addLine(to: CGPoint(x: (proxy?.size.width ?? 0), y: 0))
-//                        path.addArc(
-//                            center: CGPoint(x: (proxy?.size.width ?? 0) / 2, y: 0),
-//                            radius: proxy?.size.width ?? 0,
-//                            startAngle: .zero,
-//                            endAngle: .degrees(180),
-//                            clockwise: false)
-//                    })
-                    .clipShape(Path { path in
-                        path.move(to: .zero)
-//                            path.addLine(to: CGPoint(x: 50, y: 0))
-                        path.addArc(
-                            center: CGPoint(x: (proxy?.size.width ?? 0) / 2, y: 0),
-                            radius: (proxy?.size.width ?? 0),
-                            startAngle: .zero,
-                            endAngle: .degrees(180),
-                            clockwise: false)
-                    }.scale(x: 1, y: 0.425, anchor: .top))
-            }.overlay {
-                GeometryReader { proxy in
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Spacer()
-                            Circle().foregroundColor(.white)
-                                .frame(width: proxy.size.width / 4.3 + 4, height: proxy.size.width / 4.3 + 4)
-                                .overlay {
-                                    Image("zstu.logo").resizable()
-                                        .frame(width: proxy.size.width / 4.3, height: proxy.size.width / 4.3)
+                        GeometryReader { proxy in
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Spacer()
+                                    Circle().foregroundColor(.white)
+                                        .frame(width: proxy.size.width / 4.3 + 4, height: proxy.size.width / 4.3 + 4)
+                                        .overlay {
+                                            Image("zstu.logo").resizable()
+                                                .frame(width: proxy.size.width / 4.3, height: proxy.size.width / 4.3)
+                                        }
+                                        .shadow(radius: 8.0)
+                                    
+                                    Image("zstu.text").resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: proxy.size.width / 5)
+                                        .padding(.vertical, 8)
                                 }
-                                .shadow(radius: 8.0)
-                                
-                            Image("zstu.text").resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: proxy.size.width / 5)
-                                .padding(.vertical, 8)
+                                Spacer()
+                            }
                         }
-                        Spacer()
                     }
-                }
             }
             VStack(spacing: 20) {
                 VStack {
-                    TextField("请输入学工号", text: $ZstuSsoLoginViewModel.model.stuID)
+                    TextField("请输入学工号", text: $viewModel.stuid)
                     Divider()
                 }
                 VStack {
                     HStack {
-                        TextField("请输入密码", text: $ZstuSsoLoginViewModel.model.password)
-                        
+                        SecureField("请输入密码", text: $viewModel.password)
                     }
                     Divider()
                 }
             }.padding()
-            Button { } label: {
+            Button { Task { if #available(iOS 16.0, *) {
+                await viewModel.login()
+            } else {
+                // Fallback on earlier versions
+            } } } label: {
                 HStack {
                     Spacer()
                     Text("登录").bold().foregroundColor(.white)
@@ -227,11 +200,23 @@ struct ZstuSsoLoginView: View {
     }
 }
 
+struct ZstuSsoLoginDebugDetailView: View {
+    @ObservedObject var viewModel: LoginViewModel
+    
+    var body: some View {
+        List {
+            HStack {
+                Text("姓名")
+                Spacer()
+                Text("\(viewModel.userinfo.data.XM)")
+            }
+        }
+    }
+}
+
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
-            .environmentObject(AppViewModel(myModel: AppModel()))
-        ZstuSsoLoginView()
             .environmentObject(AppViewModel(myModel: AppModel()))
     }
 }
