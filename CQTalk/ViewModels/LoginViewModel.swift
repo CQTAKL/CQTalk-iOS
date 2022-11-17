@@ -51,10 +51,11 @@ import JavaScriptCore
     @Published var showLoginDebugDetail = false
     @Published var userinfo = ZstuSsoUserInfo() {
         didSet {
-            nickname = userinfo.data.XM + "同学"
+            if !nickname.isEmpty { nickname = userinfo.data.XM + "同学" }
         }
     }
     @Published var loginError: LoginError?
+    @Published var finishLogin: Bool = false
     
     @AppStorage("Nickname") var nickname = ""
     @AppStorage("StuID") var stuid = ""
@@ -159,7 +160,8 @@ import JavaScriptCore
             print(dataString)
             let dataDecoded = try JSONDecoder().decode(ZstuSsoUserInfo.self, from: data)
             userinfo = dataDecoded
-            showLoginDebugDetail = true
+//            showLoginDebugDetail = true
+            finishLogin = true
             guard dataDecoded.message == "OK" else { return }
             print("Hello, \(dataDecoded.data.XM)!")
         } catch {

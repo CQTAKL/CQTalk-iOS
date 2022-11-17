@@ -46,9 +46,8 @@ struct HomeView: View {
                 NavigationLink("", isActive: $homeViewModel.model.showPref) {
                     PreferenceView()
                 }
-            }.navigationBarHidden(true)
-        }.navigationViewStyle(.stack)
-            .overlay {
+            }
+        }.overlay {
                 if homeViewModel.model.showPostingPanel {
                     VStack {
                         Spacer()

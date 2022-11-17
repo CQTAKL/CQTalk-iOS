@@ -28,7 +28,8 @@ struct AppModel {
     }
     var stuID = ""
     var password = "f"
-    var nickname = ""
+    @AppStorage("Nickname") var nickname = ""
+    var editingNickname = ""
     var gender = ""
     
     @AppStorage("show_launch_screen") var showLaunchScreen = true

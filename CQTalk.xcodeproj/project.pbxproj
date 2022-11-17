@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9133650429268830001C9763 /* PreferenceViewModel.swift */; };
 		9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192B3F72925018300239CF6 /* MyViewModel.swift */; };
 		919EB433291FE750001E59DF /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919EB432291FE750001E59DF /* LinksViewModel.swift */; };
 		91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129829140BB600DE81BE /* CQTalkApp.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9133650429268830001C9763 /* PreferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewModel.swift; sourceTree = "<group>"; };
 		9192B3F72925018300239CF6 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		919EB432291FE750001E59DF /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
 		91B0129529140BB600DE81BE /* CQTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		911781A8292669CE0017889F /* My */ = {
+			isa = PBXGroup;
+			children = (
+				91B9981629140DE0000646C1 /* MyView.swift */,
+				91B9981329140DE0000646C1 /* PreferenceView.swift */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		91B0128C29140BB600DE81BE = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +206,7 @@
 				919EB432291FE750001E59DF /* LinksViewModel.swift */,
 				91CDC8612922951100B0D693 /* LoginViewModel.swift */,
 				9192B3F72925018300239CF6 /* MyViewModel.swift */,
+				9133650429268830001C9763 /* PreferenceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -202,14 +214,13 @@
 		91B9980F29140DD0000646C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				911781A8292669CE0017889F /* My */,
 				91B9982B29140DF8000646C1 /* QRCodeScannerViews */,
 				91B9981E29140DE4000646C1 /* HomeTabViews */,
 				91B9981529140DE0000646C1 /* ChatView.swift */,
 				91B9981029140DDF000646C1 /* LaunchScreenView.swift */,
 				91B9981129140DDF000646C1 /* LoginView.swift */,
-				91B9981629140DE0000646C1 /* MyView.swift */,
 				91B9981429140DE0000646C1 /* PostSomethingView.swift */,
-				91B9981329140DE0000646C1 /* PreferenceView.swift */,
 				91B9981229140DE0000646C1 /* HomeView.swift */,
 			);
 			path = Views;
@@ -385,6 +396,7 @@
 				91B9980E29140DCA000646C1 /* AppViewModel.swift in Sources */,
 				91B9982529140DF2000646C1 /* DailyClockInView.swift in Sources */,
 				91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */,
+				9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */,
 				91B9982929140DF2000646C1 /* PostsView.swift in Sources */,
 				91B9982729140DF2000646C1 /* VideoPlayerView.swift in Sources */,
 			);

@@ -3,6 +3,12 @@ import SwiftUI
 class AppViewModel: ObservableObject {
     @Published var model: AppModel
     
+    @AppStorage("Nickname") var nickname = ""
+    var editingNickname: String {
+        get { nickname }
+        set { nickname = newValue }
+    }
+    
     var showLaunchScreen: Bool {
         get {
             self.model.showLaunchScreen

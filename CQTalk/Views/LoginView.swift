@@ -4,6 +4,7 @@ struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appViewModel: AppViewModel
     @StateObject var viewModel = LoginViewModel()
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationView {
@@ -76,6 +77,11 @@ struct LoginView: View {
                     }
                     NavigationLink(destination: {
                         ZstuSsoLoginView(viewModel: viewModel)
+                            .onChange(of: viewModel.finishLogin) { status in
+                                if status {
+                                    dismiss()
+                                }
+                            }
                     }, label: {
                         HStack {
                             Spacer()
