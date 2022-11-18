@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9133650429268830001C9763 /* PreferenceViewModel.swift */; };
+		9133650729271F38001C9763 /* CryptoJS.js in Resources */ = {isa = PBXBuildFile; fileRef = 9133650629271F38001C9763 /* CryptoJS.js */; };
 		9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192B3F72925018300239CF6 /* MyViewModel.swift */; };
 		919EB433291FE750001E59DF /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919EB432291FE750001E59DF /* LinksViewModel.swift */; };
 		91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129829140BB600DE81BE /* CQTalkApp.swift */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		9133650429268830001C9763 /* PreferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewModel.swift; sourceTree = "<group>"; };
+		9133650629271F38001C9763 /* CryptoJS.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CryptoJS.js; sourceTree = "<group>"; };
+		9133650829273155001C9763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9192B3F72925018300239CF6 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		919EB432291FE750001E59DF /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
 		91B0129529140BB600DE81BE /* CQTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +148,7 @@
 		91B0129729140BB600DE81BE /* CQTalk */ = {
 			isa = PBXGroup;
 			children = (
+				9133650829273155001C9763 /* Info.plist */,
 				91B9980F29140DD0000646C1 /* Views */,
 				91B9980C29140DBF000646C1 /* ViewModels */,
 				91B9980A29140DA8000646C1 /* Resources */,
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				91B9980B29140DBA000646C1 /* test-video.mp4 */,
+				9133650629271F38001C9763 /* CryptoJS.js */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 			files = (
 				91B012A129140BB700DE81BE /* Preview Assets.xcassets in Resources */,
 				91B0129D29140BB700DE81BE /* Assets.xcassets in Resources */,
+				9133650729271F38001C9763 /* CryptoJS.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +563,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CQTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "CQ Talk";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -597,6 +604,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CQTalk/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "CQ Talk";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;

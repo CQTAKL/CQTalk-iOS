@@ -5,6 +5,7 @@ struct LoginView: View {
     @EnvironmentObject var appViewModel: AppViewModel
     @StateObject var viewModel = LoginViewModel()
     @Environment(\.dismiss) private var dismiss
+    @FocusState var isFocused: Bool
     
     var body: some View {
         NavigationView {
@@ -26,9 +27,7 @@ struct LoginView: View {
                             Text("+86")
                         }
                         TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
-                            .onChange(of: appViewModel.model.styledPhoneNumber) { _ in
-                                
-                            }
+                            .focused($isFocused)
                     }
                     Divider()
                 }
@@ -37,7 +36,8 @@ struct LoginView: View {
                 
                 Button {
                     if viewModel.isAgreedEULA {
-                        
+                        isFocused = false
+//                        Task { await viewModel.captchaSMS() }
                     } else {
                         withAnimation {
                             viewModel.showNeedAgree = true
@@ -93,7 +93,7 @@ struct LoginView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 4.0))
                     })
                 }.frame(maxWidth: 320)
-            }.padding()
+            }.padding().ignoresSafeArea(.keyboard, edges: .bottom)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button { appViewModel.cancelLogin() } label: {
@@ -209,6 +209,7 @@ struct ZstuSsoLoginView: View {
                 .minimumScaleFactor(0.5)
                 .padding(.horizontal)
         }.disabled(viewModel.isLogging ? true : false)
+            .ignoresSafeArea(.keyboard, edges: .bottom)
             .overlay {
                 if viewModel.isLogging {
                     VStack {

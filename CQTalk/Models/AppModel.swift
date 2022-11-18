@@ -2,7 +2,7 @@ import SwiftUI
 import CommonCrypto
 
 struct AppModel {
-    var phoneNumber = "19858155894"
+    @AppStorage("PhoneNumber") var phoneNumber = ""
     var styledPhoneNumber: String {
         get {
             if phoneNumber.count > 11 {
