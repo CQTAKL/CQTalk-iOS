@@ -188,7 +188,7 @@ struct QRCodeScannerView: View {
     
     var body: some View {
         ZStack {
-            let _ = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: false) { _ in 
+            let _ = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: false) { _ in
                 showScanner = true
             }
             if showScanner {

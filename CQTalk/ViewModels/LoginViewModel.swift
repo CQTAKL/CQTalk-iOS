@@ -77,11 +77,11 @@ import JavaScriptCore
         var cpasswd: String = ""
         var execution: String = ""
         var objectId: String = ""
-        var configuration = URLSessionConfiguration.default
+        let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 5
         configuration.httpShouldSetCookies = true
         
-        var session = URLSession(configuration: configuration)
+        let session = URLSession(configuration: configuration)
         
         defer {
             session.configuration.httpCookieStorage?.removeCookies(since: Date.distantPast)
@@ -96,7 +96,7 @@ import JavaScriptCore
                     print( i.domain, i.name, i.value)
                 }
             }
-            guard let dataString = String(data: data, encoding: .utf8) else {
+            guard String(data: data, encoding: .utf8) != nil else {
                 print("invalid dataString")
                 loginHasFailed(becauseOf: .unknownError)
                 return
@@ -113,6 +113,7 @@ import JavaScriptCore
             print("error response \(error)")
             return
         }
+        
         do {
             guard let url = Bundle.main.url(forResource: "CryptoJS", withExtension: "js") else { return }
             cpasswd = (JavaScriptCore.JSContext()?.evaluateScript("""
@@ -152,15 +153,17 @@ import JavaScriptCore
         } catch {
             return
         }
+        
         do {
             let (data, _) = try await session.data(from: URL(string: "https://service.zstu.edu.cn/getUser")!)
-            guard let dataString = String(data: data, encoding: .utf8) else { return }
+            guard String(data: data, encoding: .utf8) != nil else { return }
             //       print(dataString)
             let dataDecoded = try JSONDecoder().decode(ZstuSsoGetUserData.self, from: data)
             objectId = dataDecoded.objectId
         } catch {
             return
         }
+        
         do {
             let (data, _) = try await session.data(from: URL(string: "https://service.zstu.edu.cn/linkid/api/aggregate/user/userinfo/\(objectId)")!)
             guard let dataString = String(data: data, encoding: .utf8) else { return }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 @MainActor final class PreferenceViewModel: ObservableObject {
-    @AppStorage("Nickname") var nickname = ""
-    @Published var editedNickname = ""
+    @Published var editedNickname = UserDefaults.standard.string(forKey: "Nickname") ?? ""
+    
+    func saveState() {
+        UserDefaults.standard.set(editedNickname, forKey: "Nickname")
+    }
 }

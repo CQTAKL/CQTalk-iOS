@@ -6,34 +6,34 @@ struct VideoPlayerView: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Namespace var topID
     @Namespace var bottomID
-//    @State var player = AVPlayer(url: Bundle.main.url(forResource: "iMac2021", withExtension: "mp4")!)
-//    
-//    var body: some View {
-//        VideoPlayer(player: player)
-//            .frame(width: 400, height: 300, alignment: .center)
-//    }
+    //    @State var player = AVPlayer(url: Bundle.main.url(forResource: "iMac2021", withExtension: "mp4")!)
+    //    
+    //    var body: some View {
+    //        VideoPlayer(player: player)
+    //            .frame(width: 400, height: 300, alignment: .center)
+    //    }
     
     var body: some View {
         Text("")
-//        ScrollViewReader { proxy in
-//            ScrollView {
-////                Button("Scroll to Bottom") {
-////                    withAnimation {
-////                        proxy.scrollTo(bottomID)
-////                    }
-////                }
-////                .id(topID)
-//                ForEach(0 ..< 10) { _ in
-//                    ClipView().frame(height: UIScreen.main.bounds.height)
-//                }
-//                Button("Top") {
-//                    withAnimation {
-//                        proxy.scrollTo(topID)
-//                    }
-//                }
-//                .id(bottomID)
-//            }
-//        }.colorScheme(.dark)
+        //        ScrollViewReader { proxy in
+        //            ScrollView {
+        ////                Button("Scroll to Bottom") {
+        ////                    withAnimation {
+        ////                        proxy.scrollTo(bottomID)
+        ////                    }
+        ////                }
+        ////                .id(topID)
+        //                ForEach(0 ..< 10) { _ in
+        //                    ClipView().frame(height: UIScreen.main.bounds.height)
+        //                }
+        //                Button("Top") {
+        //                    withAnimation {
+        //                        proxy.scrollTo(topID)
+        //                    }
+        //                }
+        //                .id(bottomID)
+        //            }
+        //        }.colorScheme(.dark)
     }
 }
 
@@ -55,7 +55,7 @@ struct ClipView: View {
                 VStack(spacing: 20) {
                     Button {} label: {
                         Label("love", systemImage: "person.fill")
-                            
+                        
                     }
                     Button {} label: {
                         Label("love", systemImage: "heart.fill")

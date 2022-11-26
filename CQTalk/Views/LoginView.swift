@@ -37,7 +37,7 @@ struct LoginView: View {
                 Button {
                     if viewModel.isAgreedEULA {
                         isFocused = false
-//                        Task { await viewModel.captchaSMS() }
+                        Task { await viewModel.captchaSMS() }
                     } else {
                         withAnimation {
                             viewModel.showNeedAgree = true
@@ -112,7 +112,7 @@ struct LoginView: View {
                                 }
                             }
                         }.frame(minWidth: 100, minHeight: 60)
-                        .background(Color.green)
+                            .background(Color.green)
                     }
                 }
         }.sheet(isPresented: $viewModel.showLoginDebugDetail) { ZstuSsoLoginDebugDetailView(viewModel: viewModel) }

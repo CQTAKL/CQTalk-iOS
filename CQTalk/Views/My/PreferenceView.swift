@@ -44,7 +44,8 @@ struct PreferenceView: View {
     }
     
     var EditProfile: some View {
-        Form {
+        @Environment(\.dismiss) var dismiss
+        return Form {
             Section {
                 NavigationLink("头像", destination: EmptyView())
             }
@@ -53,15 +54,15 @@ struct PreferenceView: View {
             }
             Section {
                 Button {
-                    
+                    viewModel.saveState()
                 } label: {
                     HStack {
                         Spacer()
                         Text("保存").foregroundColor(.white)
                         Spacer()
                     }
-                }.disabled(true).opacity(0.5)
-            }.listRowBackground(Color.accentColor.opacity(0.5))
+                }.disabled(false)
+            }.listRowBackground(Color.accentColor)
         }.navigationTitle("编辑资料")
     }
     
@@ -82,10 +83,11 @@ struct PreferenceView: View {
 
 struct PreferenceView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
         NavigationView {
             PreferenceView()
                 .environmentObject(AppViewModel(myModel: AppModel(nickname: "haren724", tabSelections: [0, 4])))
         }
     }
 }
- 
+

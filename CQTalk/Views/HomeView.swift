@@ -14,26 +14,26 @@ struct HomeView: View {
         NavigationView {
             TabView(selection: $homeViewModel.model.tabSelection) {
                 HomePageView().tabItem {
-//                    Text("首页")
+                    //                    Text("首页")
                     Label("首页", systemImage: "house")
                 }.tag(0)
                 VideoPlayerView().tabItem {
-//                    Text("文件")
+                    //                    Text("文件")
                     Label("文件", systemImage: "doc")
                 }.tag(1)
                 PostSomethingView().tabItem {
                     Image(systemName: "plus.rectangle")
                 }.tag(2)
-                .onAppear {
-                    homeViewModel.togglePostingPanel()
-                }
+                    .onAppear {
+                        homeViewModel.togglePostingPanel()
+                    }
                 ChatView().tabItem {
-//                    Text("聊天")
+                    //                    Text("聊天")
                     Label("聊天", systemImage: "bell")
                 }.badge(99)
                     .tag(3)
                 MyView().tabItem {
-//                    Text("我的")
+                    //                    Text("我的")
                     Label("我的", systemImage: "person")
                 }.tag(4)
             }
@@ -48,35 +48,35 @@ struct HomeView: View {
                 }
             }
         }.overlay {
-                if homeViewModel.model.showPostingPanel {
+            if homeViewModel.model.showPostingPanel {
+                VStack {
+                    Spacer()
                     VStack {
-                        Spacer()
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Button {
-                                    homeViewModel.togglePostingPanel()
-                                    homeViewModel.backTabSelection()
-                                } label: {
-                                    Label("取消", systemImage: "xmark.circle")
-                                        .labelStyle(.iconOnly)
-                                        .imageScale(.large)
-                                }
-                            }.padding()
-                            HStack {
-                                Spacer()
-                                Text("Haha")
-                                Spacer()
-                            }
+                        HStack {
                             Spacer()
-                        }.frame(maxWidth: 400) .frame(height: 300)
-                            .background(Color.white)
-                            .foregroundColor(.black)
-                            .clipShape(RoundedRectangle(cornerRadius: 8.0))
-                            .padding()
-                    }.transition(.asymmetric(insertion: .move(edge: .bottom), removal: .opacity))
-                }
+                            Button {
+                                homeViewModel.togglePostingPanel()
+                                homeViewModel.backTabSelection()
+                            } label: {
+                                Label("取消", systemImage: "xmark.circle")
+                                    .labelStyle(.iconOnly)
+                                    .imageScale(.large)
+                            }
+                        }.padding()
+                        HStack {
+                            Spacer()
+                            Text("Haha")
+                            Spacer()
+                        }
+                        Spacer()
+                    }.frame(maxWidth: 400) .frame(height: 300)
+                        .background(Color.white)
+                        .foregroundColor(.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                        .padding()
+                }.transition(.asymmetric(insertion: .move(edge: .bottom), removal: .opacity))
             }
+        }
     }
 }
 

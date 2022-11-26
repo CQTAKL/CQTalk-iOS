@@ -9,7 +9,7 @@ struct LinksView: View {
                 HStack {
                     Image(systemName: "speaker.wave.2.circle")
                         .foregroundColor(.primary)
-                    Text("欢迎来到创琦杂谈").font(.caption) 
+                    Text("欢迎来到创琦杂谈").font(.caption)
                     Spacer()
                 }
                 HStack {
@@ -63,50 +63,50 @@ struct LinksView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8.0))
                 }
             }
-//                List {
-//                    Section {
-//                        ForEach(1..<100) { _ in
-//                            VStack(spacing: 10) {
-//                                HStack {
-//                                    Text("python学习资源下载sdafasdfs处").bold()
-//                                    Spacer()
-//                                }
-//                                HStack {
-//                                    Text("点击这里获取云盘链接，下载python资料sdjfdksjfksdjfkdsjkfjsdkfsd").font(.footnote)
-//                                        .foregroundColor(.secondary)
-//                                    Spacer()
-//                                }
-//                                HStack {
-//                                    HStack {
-//                                        Group {
-//                                            Text("置顶")
-//                                            Text("火热")
-//                                            Text("精华")
-//                                        }.font(.caption2).foregroundColor(.white)
-//                                            .background(RoundedRectangle(cornerRadius: 2.0)
-//                                                .foregroundColor(.orange))
-//                                        Spacer()
-//                                    }
-//                                    HStack {
-//                                        Image(systemName: "eye")
-//                                        Text("100")
-//                                    }
-//                                    HStack {
-//                                        Button { } label: {
-//                                            Label("100", systemImage: "hand.thumbsup.fill")
-//                                        }
-//                                    }
-//                                    HStack {
-//                                        Image(systemName: "heart.fill")
-//                                        Text("100")
-//                                    }
-//                                }
-//                            }.frame(maxHeight: 60)
-//                        }
-//                    } header: {
-//
-//                    }
-//                }.navigationTitle(viewModel.linksTitle.rawValue)
+            //                List {
+            //                    Section {
+            //                        ForEach(1..<100) { _ in
+            //                            VStack(spacing: 10) {
+            //                                HStack {
+            //                                    Text("python学习资源下载sdafasdfs处").bold()
+            //                                    Spacer()
+            //                                }
+            //                                HStack {
+            //                                    Text("点击这里获取云盘链接，下载python资料sdjfdksjfksdjfkdsjkfjsdkfsd").font(.footnote)
+            //                                        .foregroundColor(.secondary)
+            //                                    Spacer()
+            //                                }
+            //                                HStack {
+            //                                    HStack {
+            //                                        Group {
+            //                                            Text("置顶")
+            //                                            Text("火热")
+            //                                            Text("精华")
+            //                                        }.font(.caption2).foregroundColor(.white)
+            //                                            .background(RoundedRectangle(cornerRadius: 2.0)
+            //                                                .foregroundColor(.orange))
+            //                                        Spacer()
+            //                                    }
+            //                                    HStack {
+            //                                        Image(systemName: "eye")
+            //                                        Text("100")
+            //                                    }
+            //                                    HStack {
+            //                                        Button { } label: {
+            //                                            Label("100", systemImage: "hand.thumbsup.fill")
+            //                                        }
+            //                                    }
+            //                                    HStack {
+            //                                        Image(systemName: "heart.fill")
+            //                                        Text("100")
+            //                                    }
+            //                                }
+            //                            }.frame(maxHeight: 60)
+            //                        }
+            //                    } header: {
+            //
+            //                    }
+            //                }.navigationTitle(viewModel.linksTitle.rawValue)
         }
     }
 }

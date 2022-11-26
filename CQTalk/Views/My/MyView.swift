@@ -35,10 +35,10 @@ struct MyView: View {
                     .foregroundColor(.secondary)
                     .imageScale(.small)
             }.padding(.horizontal)
-            .frame(maxHeight: 75)
-            .onTapGesture {
-                myViewModel.model.showPref.toggle()
-            }
+                .frame(maxHeight: 75)
+                .onTapGesture {
+                    myViewModel.model.showPref.toggle()
+                }
             HStack {
                 Spacer()
                 VStack {
@@ -75,27 +75,29 @@ struct MyView: View {
                         
                     }
                 }.padding(.top)
-                .padding(.horizontal, 8)
+                    .padding(.horizontal, 8)
             }.background(.regularMaterial)
                 .clipShape(RoundedRectangle(cornerRadius: 4))
-            .padding()
-                
+                .padding()
+            
         }.toolbar {
-            HStack {
-                Button {
-                    showQRCodeScanner.toggle()
-                } label: {
-                    Image(systemName: "qrcode.viewfinder")
-                }
-                Button {
-                    
-                } label: {
-                    Image(systemName: "basket.fill")
-                }
-                Button {
-                    myViewModel.model.showPref.toggle()
-                } label: {
-                    Image(systemName: "gear")
+            if myViewModel.model.tabSelection == 4 {
+                HStack {
+                    Button {
+                        showQRCodeScanner.toggle()
+                    } label: {
+                        Image(systemName: "qrcode.viewfinder")
+                    }
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "basket.fill")
+                    }
+                    Button {
+                        myViewModel.model.showPref.toggle()
+                    } label: {
+                        Image(systemName: "gear")
+                    }
                 }
             }
         }.fullScreenCover(isPresented: $showQRCodeScanner) {
@@ -106,7 +108,7 @@ struct MyView: View {
 
 struct MyView_Previews: PreviewProvider {
     static var previews: some View {
-//        MyView()
+        //        MyView()
         HomeView()
             .environmentObject(AppViewModel(myModel: AppModel(tabSelections: [0, 4])))
     }

@@ -9,7 +9,7 @@ enum proLang: String, CaseIterable, Identifiable { // Programing Language
     var id: Self { self }
 }   
 enum proDev: String, CaseIterable, Identifiable { // Program Developing
-    case blank, favorSites, devTeam, internship, ebooks, 
+    case blank, favorSites, devTeam, internship, ebooks,
          algo, openSource, template, example
     var id: Self { self }
 }    
@@ -22,7 +22,7 @@ enum bigData: String, CaseIterable, Identifiable { // Big Data
     var id: Self { self }
 }
 enum intSci: String, CaseIterable, Identifiable { // Intelligence Science
-    case blank, ai, ml, comVisual, voiceDetection, digitalAudioProcessing 
+    case blank, ai, ml, comVisual, voiceDetection, digitalAudioProcessing
     var id: Self { self }
 }
 
@@ -37,7 +37,7 @@ struct PostsView: View {
                     ForEach(1..<100) { _ in
                         VStack {
                             HStack {
-                            Text("python学习资源下载sdafasdfs处").bold()
+                                Text("python学习资源下载sdafasdfs处").bold()
                                 Group {
                                     Text("置顶").font(.caption2)
                                     Text("火热").font(.caption2)
