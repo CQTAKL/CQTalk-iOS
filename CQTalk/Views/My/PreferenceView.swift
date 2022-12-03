@@ -22,7 +22,7 @@ struct PreferenceView: View {
                 NavigationLink("个人信息查阅与管理", destination: { })
             }
             Section {
-                NavigationLink("关于", destination: { })
+                NavigationLink("关于", destination: { AboutUs() })
             }
             Section {
                 Toggle("显示5s启动页面", isOn: $preferenceViewModel.showLaunchScreen)
@@ -81,9 +81,67 @@ struct PreferenceView: View {
     }
 }
 
+struct AboutUs: View {
+    var body: some View {
+        ZStack {
+            ScrollView {
+                Spacer().frame(height: 50)
+                Image("chuangqi-logo")
+                    .resizable()
+                    .frame(width: 64, height: 64)
+                    .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                    .padding(30)
+                Text("创琦杂谈").font(.title2).fontWeight(.semibold).padding(.bottom, 1)
+                Text("Version 0.1 (alpha)")
+                Divider().padding(.horizontal)
+                VStack {
+                    Link(destination: URL(string: "https://www.baidu.com")!) {
+                        HStack {
+                            Text("去评分").foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right").foregroundColor(.init(uiColor: .lightGray))
+                        }
+                    }.frame(height: 40)
+                    Divider()
+                    HStack {
+                        Text("功能介绍")
+                        Spacer()
+                        Image(systemName: "chevron.right").foregroundColor(.init(uiColor: .lightGray))
+                    }.frame(height: 40)
+                    Divider()
+                    HStack {
+                        Text("投诉与建议")
+                        Spacer()
+                        Image(systemName: "chevron.right").foregroundColor(.init(uiColor: .lightGray))
+                    }.frame(height: 40)
+                    Divider()
+                    Link(destination: URL(string: "https://www.baidu.com")!) {
+                        HStack {
+                            Text("版本更新").foregroundColor(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right").foregroundColor(.init(uiColor: .lightGray))
+                        }
+                    }.frame(height: 40)
+                    Divider()
+                }.padding(.horizontal)
+            }
+            VStack {
+                Spacer()
+                VStack {
+                    HStack {
+                        Text("Made with ❤️ by").foregroundColor(.secondary)
+                        Link("@haren724", destination: URL(string: "https://github.com/haren724")!)
+                    }.font(.footnote)
+                }.background(Color(uiColor: .secondarySystemBackground))
+            }
+        }.background(Color(uiColor: .secondarySystemBackground))
+    }
+}
+
 struct PreferenceView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        AboutUs()
         NavigationView {
             PreferenceView()
                 .environmentObject(AppViewModel(myModel: AppModel(nickname: "haren724", tabSelections: [0, 4])))

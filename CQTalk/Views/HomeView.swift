@@ -14,11 +14,9 @@ struct HomeView: View {
         NavigationView {
             TabView(selection: $homeViewModel.model.tabSelection) {
                 HomePageView().tabItem {
-                    //                    Text("首页")
                     Label("首页", systemImage: "house")
                 }.tag(0)
                 VideoPlayerView().tabItem {
-                    //                    Text("文件")
                     Label("文件", systemImage: "doc")
                 }.tag(1)
                 PostSomethingView().tabItem {
@@ -28,24 +26,40 @@ struct HomeView: View {
                         homeViewModel.togglePostingPanel()
                     }
                 ChatView().tabItem {
-                    //                    Text("聊天")
                     Label("聊天", systemImage: "bell")
                 }.badge(99)
                     .tag(3)
                 MyView().tabItem {
-                    //                    Text("我的")
                     Label("我的", systemImage: "person")
                 }.tag(4)
+            }.toolbar {
+                if homeViewModel.model.tabSelection == 4 {
+                    HStack {
+                        NavigationLink { StuPassCodeView() } label: {
+                            Image(systemName: "qrcode")
+                        }
+                        Button {
+//                            showQRCodeScanner.toggle()
+                        } label: {
+                            Image(systemName: "qrcode.viewfinder")
+                        }
+                        Button {
+                            
+                        } label: {
+                            Image(systemName: "basket.fill")
+                        }
+                        NavigationLink {
+                            PreferenceView()
+                        } label: {
+                            Image(systemName: "gear")
+                        }
+                    }
+                }
             }
             .brightness(homeViewModel.model.showPostingPanel ? -0.25 : 0)
             .labelStyle(HorizonalLabelStyle())
             .fullScreenCover(isPresented: $homeViewModel.model.needsLogin) {
                 LoginView()
-            }
-            .overlay {
-                NavigationLink("", isActive: $homeViewModel.model.showPref) {
-                    PreferenceView()
-                }
             }
         }.overlay {
             if homeViewModel.model.showPostingPanel {

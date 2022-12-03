@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91271C5729339743001F276D /* StuPassCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91271C5629339743001F276D /* StuPassCodeView.swift */; };
+		91271C5929339756001F276D /* StuPassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91271C5829339756001F276D /* StuPassCodeViewModel.swift */; };
 		9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9133650429268830001C9763 /* PreferenceViewModel.swift */; };
 		9133650729271F38001C9763 /* CryptoJS.js in Resources */ = {isa = PBXBuildFile; fileRef = 9133650629271F38001C9763 /* CryptoJS.js */; };
 		9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192B3F72925018300239CF6 /* MyViewModel.swift */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91271C5629339743001F276D /* StuPassCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuPassCodeView.swift; sourceTree = "<group>"; };
+		91271C5829339756001F276D /* StuPassCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StuPassCodeViewModel.swift; sourceTree = "<group>"; };
 		9133650429268830001C9763 /* PreferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewModel.swift; sourceTree = "<group>"; };
 		9133650629271F38001C9763 /* CryptoJS.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CryptoJS.js; sourceTree = "<group>"; };
 		9133650829273155001C9763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +129,13 @@
 			path = My;
 			sourceTree = "<group>";
 		};
+		91271C5A29339781001F276D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		91B0128C29140BB600DE81BE = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9133650829273155001C9763 /* Info.plist */,
+				91271C5A29339781001F276D /* Services */,
 				91B9980F29140DD0000646C1 /* Views */,
 				91B9980C29140DBF000646C1 /* ViewModels */,
 				91B9980A29140DA8000646C1 /* Resources */,
@@ -212,6 +224,7 @@
 				91CDC8612922951100B0D693 /* LoginViewModel.swift */,
 				9192B3F72925018300239CF6 /* MyViewModel.swift */,
 				9133650429268830001C9763 /* PreferenceViewModel.swift */,
+				91271C5829339756001F276D /* StuPassCodeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,6 +240,7 @@
 				91B9981129140DDF000646C1 /* LoginView.swift */,
 				91B9981429140DE0000646C1 /* PostSomethingView.swift */,
 				91B9981229140DE0000646C1 /* HomeView.swift */,
+				91271C5629339743001F276D /* StuPassCodeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +399,7 @@
 			files = (
 				91B9981829140DE0000646C1 /* LoginView.swift in Sources */,
 				91B9981A29140DE0000646C1 /* PreferenceView.swift in Sources */,
+				91271C5729339743001F276D /* StuPassCodeView.swift in Sources */,
 				91B9981D29140DE0000646C1 /* MyView.swift in Sources */,
 				91B9982629140DF2000646C1 /* PostSearchView.swift in Sources */,
 				91B9982829140DF2000646C1 /* HomePageView.swift in Sources */,
@@ -405,6 +420,7 @@
 				9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */,
 				91B9982929140DF2000646C1 /* PostsView.swift in Sources */,
 				91B9982729140DF2000646C1 /* VideoPlayerView.swift in Sources */,
+				91271C5929339756001F276D /* StuPassCodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

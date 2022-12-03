@@ -80,26 +80,6 @@ struct MyView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 4))
                 .padding()
             
-        }.toolbar {
-            if myViewModel.model.tabSelection == 4 {
-                HStack {
-                    Button {
-                        showQRCodeScanner.toggle()
-                    } label: {
-                        Image(systemName: "qrcode.viewfinder")
-                    }
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "basket.fill")
-                    }
-                    Button {
-                        myViewModel.model.showPref.toggle()
-                    } label: {
-                        Image(systemName: "gear")
-                    }
-                }
-            }
         }.fullScreenCover(isPresented: $showQRCodeScanner) {
             QRCodeScannerView(showQRCodeScanner: $showQRCodeScanner)
         }

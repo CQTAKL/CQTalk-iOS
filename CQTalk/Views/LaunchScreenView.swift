@@ -5,12 +5,12 @@ struct LaunchScreenView: View {
     
     var body: some View {
         ZStack {
-            Image("test").resizable()
+            Image("test-launchscreen").resizable()
                 .edgesIgnoringSafeArea(.all)
                 .aspectRatio(contentMode: .fill)
                 .blur(radius: 8)
                 .frame(maxWidth: 100)
-            Image("test").resizable()
+            Image("test-launchscreen").resizable()
                 .edgesIgnoringSafeArea(.all)
                 .aspectRatio(contentMode: .fit)
             VStack { // 跳过按钮
