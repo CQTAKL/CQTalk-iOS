@@ -2,6 +2,7 @@ import SwiftUI
 
 class AppViewModel: ObservableObject {
     @Published var model: AppModel
+    @Published var showPref: Bool = false
     
     @AppStorage("Nickname") var nickname = ""
     var editingNickname: String {

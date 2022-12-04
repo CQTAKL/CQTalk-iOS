@@ -9,4 +9,5 @@ import SwiftUI
 
 @MainActor final class MyViewModel: ObservableObject {
     @AppStorage("Nickname") var nickname = ""
+    
 }

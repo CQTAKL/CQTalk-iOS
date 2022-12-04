@@ -22,7 +22,7 @@ struct PreferenceView: View {
                 NavigationLink("个人信息查阅与管理", destination: { })
             }
             Section {
-                NavigationLink("关于", destination: { AboutUs() })
+                NavigationLink("关于", destination: { AboutUsView() })
             }
             Section {
                 Toggle("显示5s启动页面", isOn: $preferenceViewModel.showLaunchScreen)
@@ -81,7 +81,7 @@ struct PreferenceView: View {
     }
 }
 
-struct AboutUs: View {
+struct AboutUsView: View {
     var body: some View {
         ZStack {
             ScrollView {
@@ -90,6 +90,7 @@ struct AboutUs: View {
                     .resizable()
                     .frame(width: 64, height: 64)
                     .clipShape(RoundedRectangle(cornerRadius: 8.0))
+                    .shadow(radius: 4.0)
                     .padding(30)
                 Text("创琦杂谈").font(.title2).fontWeight(.semibold).padding(.bottom, 1)
                 Text("Version 0.1 (alpha)")
@@ -124,7 +125,8 @@ struct AboutUs: View {
                     }.frame(height: 40)
                     Divider()
                 }.padding(.horizontal)
-            }
+            }.background(Color(uiColor: .secondarySystemBackground))
+//                .opacity(0.75)
             VStack {
                 Spacer()
                 VStack {
@@ -141,7 +143,7 @@ struct AboutUs: View {
 struct PreferenceView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-        AboutUs()
+        AboutUsView()
         NavigationView {
             PreferenceView()
                 .environmentObject(AppViewModel(myModel: AppModel(nickname: "haren724", tabSelections: [0, 4])))

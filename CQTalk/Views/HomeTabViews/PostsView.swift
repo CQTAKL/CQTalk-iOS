@@ -31,9 +31,7 @@ struct PostsView: View {
     @State var _title1: any Hashable = PostTitle.blank
     
     var body: some View {
-        NavigationView {
-            Text("")
-        }
+        Text("")
     }
 }
 

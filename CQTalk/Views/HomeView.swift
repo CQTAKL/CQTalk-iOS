@@ -7,11 +7,10 @@ struct HomeView: View {
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
         UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
-        
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             TabView(selection: $homeViewModel.model.tabSelection) {
                 HomePageView().tabItem {
                     Label("首页", systemImage: "house")
@@ -29,39 +28,18 @@ struct HomeView: View {
                     Label("聊天", systemImage: "bell")
                 }.badge(99)
                     .tag(3)
-                MyView().tabItem {
+                MyView(homeViewModel: homeViewModel).tabItem {
                     Label("我的", systemImage: "person")
                 }.tag(4)
-            }.toolbar {
-                if homeViewModel.model.tabSelection == 4 {
-                    HStack {
-                        NavigationLink { StuPassCodeView() } label: {
-                            Image(systemName: "qrcode")
-                        }
-                        Button {
-//                            showQRCodeScanner.toggle()
-                        } label: {
-                            Image(systemName: "qrcode.viewfinder")
-                        }
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "basket.fill")
-                        }
-                        NavigationLink {
-                            PreferenceView()
-                        } label: {
-                            Image(systemName: "gear")
-                        }
-                    }
-                }
             }
+            .navigationDestination(isPresented: $homeViewModel.showPref, destination: { PreferenceView() })
             .brightness(homeViewModel.model.showPostingPanel ? -0.25 : 0)
             .labelStyle(HorizonalLabelStyle())
             .fullScreenCover(isPresented: $homeViewModel.model.needsLogin) {
                 LoginView()
             }
-        }.overlay {
+        }
+        .overlay {
             if homeViewModel.model.showPostingPanel {
                 VStack {
                     Spacer()
