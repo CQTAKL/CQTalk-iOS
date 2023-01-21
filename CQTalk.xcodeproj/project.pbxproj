@@ -21,6 +21,7 @@
 		91B012AB29140BB700DE81BE /* CQTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012AA29140BB700DE81BE /* CQTalkTests.swift */; };
 		91B012B529140BB700DE81BE /* CQTalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012B429140BB700DE81BE /* CQTalkUITests.swift */; };
 		91B012B729140BB700DE81BE /* CQTalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B012B629140BB700DE81BE /* CQTalkUITestsLaunchTests.swift */; };
+		91B78393297C18B600819E7B /* DailyClockinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B78392297C18B600819E7B /* DailyClockinViewModel.swift */; };
 		91B9980929140D9B000646C1 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9980829140D9B000646C1 /* AppModel.swift */; };
 		91B9980E29140DCA000646C1 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9980D29140DCA000646C1 /* AppViewModel.swift */; };
 		91B9981729140DE0000646C1 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9981029140DDF000646C1 /* LaunchScreenView.swift */; };
@@ -76,6 +77,7 @@
 		91B012B029140BB700DE81BE /* CQTalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CQTalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B012B429140BB700DE81BE /* CQTalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkUITests.swift; sourceTree = "<group>"; };
 		91B012B629140BB700DE81BE /* CQTalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CQTalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91B78392297C18B600819E7B /* DailyClockinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyClockinViewModel.swift; sourceTree = "<group>"; };
 		91B9980829140D9B000646C1 /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		91B9980B29140DBA000646C1 /* test-video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "test-video.mp4"; sourceTree = "<group>"; };
 		91B9980D29140DCA000646C1 /* AppViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				9192B3F72925018300239CF6 /* MyViewModel.swift */,
 				9133650429268830001C9763 /* PreferenceViewModel.swift */,
 				91271C5829339756001F276D /* StuPassCodeViewModel.swift */,
+				91B78392297C18B600819E7B /* DailyClockinViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				91B9980929140D9B000646C1 /* AppModel.swift in Sources */,
 				919EB433291FE750001E59DF /* LinksViewModel.swift in Sources */,
 				91B9980E29140DCA000646C1 /* AppViewModel.swift in Sources */,
+				91B78393297C18B600819E7B /* DailyClockinViewModel.swift in Sources */,
 				91B9982529140DF2000646C1 /* DailyClockInView.swift in Sources */,
 				91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */,
 				9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */,
