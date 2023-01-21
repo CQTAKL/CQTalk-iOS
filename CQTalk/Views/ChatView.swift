@@ -6,6 +6,11 @@ struct ChatView: View {
             List {
                 Text("who")
             }.navigationTitle("聊天")
+                .toolbar {
+                    Button("全部已读") {
+                        
+                    }
+                }
         }
     }
 }

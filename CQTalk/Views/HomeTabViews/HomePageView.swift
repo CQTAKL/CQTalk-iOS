@@ -5,19 +5,6 @@ struct HomePageView: View {
     
     var body: some View {
         NavigationView {
-            //            Group {
-            //                switch selection {
-            //                case 0:
-            //                    DailyClockInView()
-            //                case 1:
-            //                    PostsView()
-            //                case 2:
-            //                    LinksView()
-            //                case 3:
-            //                    VideoPlayerView()
-            //                default:
-            //                    Text("error")
-            //                }
             TabView(selection: $selection) {
                 DailyClockInView().tag(0)
                 PostsView().tag(1)
@@ -57,6 +44,7 @@ struct HomePageView: View {
                             VStack(spacing: 0) {
                                 Button { withAnimation { selection = 2 } } label: {
                                     Text(selection == 2 ? "**链接**" : "链接")
+                                        .animation(.easeInOut)
                                 }.foregroundColor(selection == 2 ? .primary : .secondary)
                                 if selection == 2 {
                                     Color.accentColor.frame(height: 2)
@@ -67,6 +55,7 @@ struct HomePageView: View {
                             VStack(spacing: 0) {
                                 Button { withAnimation {selection = 3 } } label: {
                                     Text(selection == 3 ? "**视频**" : "视频")
+                                        .animation(.easeInOut)
                                 }.foregroundColor(selection == 3 ? .primary : .secondary)
                                 if selection == 3 {
                                     Color.accentColor.frame(height: 2)

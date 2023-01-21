@@ -26,8 +26,7 @@ struct HomeView: View {
                     }
                 ChatView().tabItem {
                     Label("聊天", systemImage: "bell")
-                }.badge(99)
-                    .tag(3)
+                }.tag(3).badge(99)
                 MyView(homeViewModel: homeViewModel).tabItem {
                     Label("我的", systemImage: "person")
                 }.tag(4)

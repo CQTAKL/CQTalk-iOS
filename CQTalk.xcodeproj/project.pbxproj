@@ -11,6 +11,7 @@
 		91271C5929339756001F276D /* StuPassCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91271C5829339756001F276D /* StuPassCodeViewModel.swift */; };
 		9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9133650429268830001C9763 /* PreferenceViewModel.swift */; };
 		9133650729271F38001C9763 /* CryptoJS.js in Resources */ = {isa = PBXBuildFile; fileRef = 9133650629271F38001C9763 /* CryptoJS.js */; };
+		914DAF95293CF34600BF0AFA /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914DAF94293CF34600BF0AFA /* HomePageView.swift */; };
 		9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192B3F72925018300239CF6 /* MyViewModel.swift */; };
 		919EB433291FE750001E59DF /* LinksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919EB432291FE750001E59DF /* LinksViewModel.swift */; };
 		91B0129929140BB600DE81BE /* CQTalkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B0129829140BB600DE81BE /* CQTalkApp.swift */; };
@@ -32,7 +33,6 @@
 		91B9982529140DF2000646C1 /* DailyClockInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9981F29140DF1000646C1 /* DailyClockInView.swift */; };
 		91B9982629140DF2000646C1 /* PostSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982029140DF1000646C1 /* PostSearchView.swift */; };
 		91B9982729140DF2000646C1 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982129140DF1000646C1 /* VideoPlayerView.swift */; };
-		91B9982829140DF2000646C1 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982229140DF2000646C1 /* HomePageView.swift */; };
 		91B9982929140DF2000646C1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982329140DF2000646C1 /* PostsView.swift */; };
 		91B9982A29140DF2000646C1 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982429140DF2000646C1 /* LinksView.swift */; };
 		91B9982D29140E06000646C1 /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9982C29140E06000646C1 /* QRCodeScannerView.swift */; };
@@ -62,6 +62,7 @@
 		9133650429268830001C9763 /* PreferenceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceViewModel.swift; sourceTree = "<group>"; };
 		9133650629271F38001C9763 /* CryptoJS.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = CryptoJS.js; sourceTree = "<group>"; };
 		9133650829273155001C9763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		914DAF94293CF34600BF0AFA /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		9192B3F72925018300239CF6 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 		919EB432291FE750001E59DF /* LinksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewModel.swift; sourceTree = "<group>"; };
 		91B0129529140BB600DE81BE /* CQTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,7 +89,6 @@
 		91B9981F29140DF1000646C1 /* DailyClockInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyClockInView.swift; sourceTree = "<group>"; };
 		91B9982029140DF1000646C1 /* PostSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSearchView.swift; sourceTree = "<group>"; };
 		91B9982129140DF1000646C1 /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
-		91B9982229140DF2000646C1 /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		91B9982329140DF2000646C1 /* PostsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
 		91B9982429140DF2000646C1 /* LinksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
 		91B9982C29140E06000646C1 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				91B9981F29140DF1000646C1 /* DailyClockInView.swift */,
-				91B9982229140DF2000646C1 /* HomePageView.swift */,
+				914DAF94293CF34600BF0AFA /* HomePageView.swift */,
 				91B9982429140DF2000646C1 /* LinksView.swift */,
 				91B9982029140DF1000646C1 /* PostSearchView.swift */,
 				91B9982329140DF2000646C1 /* PostsView.swift */,
@@ -402,7 +402,6 @@
 				91271C5729339743001F276D /* StuPassCodeView.swift in Sources */,
 				91B9981D29140DE0000646C1 /* MyView.swift in Sources */,
 				91B9982629140DF2000646C1 /* PostSearchView.swift in Sources */,
-				91B9982829140DF2000646C1 /* HomePageView.swift in Sources */,
 				9192B3F82925018300239CF6 /* MyViewModel.swift in Sources */,
 				91B9982D29140E06000646C1 /* QRCodeScannerView.swift in Sources */,
 				91B9981C29140DE0000646C1 /* ChatView.swift in Sources */,
@@ -420,6 +419,7 @@
 				9133650529268830001C9763 /* PreferenceViewModel.swift in Sources */,
 				91B9982929140DF2000646C1 /* PostsView.swift in Sources */,
 				91B9982729140DF2000646C1 /* VideoPlayerView.swift in Sources */,
+				914DAF95293CF34600BF0AFA /* HomePageView.swift in Sources */,
 				91271C5929339756001F276D /* StuPassCodeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

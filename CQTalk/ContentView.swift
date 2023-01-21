@@ -12,6 +12,7 @@ struct ContentView: View {
     @State var launchSeconds = 5
     
     var body: some View {
+    //  开屏广告
         if launchSeconds > 0 && appViewModel.showLaunchScreen {
             LaunchScreenView(seconds: $launchSeconds)
                 .onAppear {
@@ -29,5 +30,11 @@ struct ContentView: View {
                 .onAppear { launchSeconds = 0 }
                 .environmentObject(appViewModel)
         }
+    }
+}
+
+struct ContentView_Preview: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }

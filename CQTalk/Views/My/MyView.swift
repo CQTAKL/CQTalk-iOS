@@ -37,7 +37,7 @@ struct MyView: View {
                                     Text("0")
                                 }
                             }.font(.footnote)
-                            .foregroundColor(.secondary)
+                                .foregroundColor(.secondary)
                         }
                         Spacer()
                         Image(systemName: "chevron.right")
