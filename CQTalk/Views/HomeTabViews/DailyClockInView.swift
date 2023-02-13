@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DailyClockInView: View {
-    
+    @State private var position: Alignment = .leading
     @State private var str: String = ""
     @State private var str2: String = ""
     @State private var selectedDate: Date = Date.now
@@ -70,18 +70,40 @@ struct DailyClockInView: View {
                 Spacer()
             }
             VStack {
-                ScrollView(.horizontal) {
-                    HStack {
-                        Button("打卡记录") { }
-                        Button("补签") { }
-                        Button("我的信息") { }
-                        Button("排行榜") { }
-                        Button("提供建议") { }
-                        Button("打卡规则") { }
-                    }.font(.footnote)
-                        .padding(.top)
-                        .buttonStyle(.borderedProminent)
+                ScrollViewReader { proxy in
+                    VStack {
+                        ScrollView(.horizontal) {
+                            HStack {
+                                Button("打卡记录") { }
+                                    .id("leadingItem")
+                                Button("补签") { }
+                                Button("我的信息") { }
+                                Button("排行榜") { }
+                                Button("提供建议") { }
+                                Button("打卡规则") { }
+                                    .id("trailingItem")
+                            }
+                        }.overlay {
+                            HStack {
+                                if position == .leading { Spacer() }
+                                Button {
+                                    withAnimation(.linear  ) {
+                                        if position == .leading { proxy.scrollTo("trailingItem"); position = .trailing }
+                                        else { proxy.scrollTo("leadingItem"); position = .leading }
+                                    }
+                                } label: {
+                                    Image(systemName: position == .leading ? "chevron.right.circle" : "chevron.left.circle")
+                                }
+                                if position == .trailing { Spacer() }
+                            }
+                        }
+                            .padding(.horizontal)
+                            .font(.footnote)
+                            .padding(.top)
+                            .buttonStyle(.borderedProminent)
+                    }
                 }.scrollIndicators(.hidden)
+                    .scrollDisabled(true)
                 HStack(spacing: 20) {
                     Button("今日题目") { }
                     Button("昨日题目") { }
