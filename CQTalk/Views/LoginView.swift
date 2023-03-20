@@ -1,5 +1,9 @@
 import SwiftUI
 
+extension ButtonStyle {
+    
+}
+
 struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var appViewModel: AppViewModel
@@ -8,92 +12,139 @@ struct LoginView: View {
     @FocusState var isFocused: Bool
     
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack(alignment: .center) {
-                    Image("chuangqi-logo").resizable()
-                        .frame(width: 40, height: 40)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
-                        .padding(.top)
-                    Text("登录体验更多精彩").font(.title)
-                    Spacer()
-                }
-                
-                Spacer().frame(maxHeight: 80)
-                
-                VStack {
-                    HStack {
-                        Picker("区号", selection: .constant(0)) {
-                            Text("+86")
-                        }
-                        TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
-                            .focused($isFocused)
-                    }
-                    Divider()
-                }
-                
-                Spacer().frame(maxHeight: 40)
-                
-                Button {
-                    if viewModel.isAgreedEULA {
-                        isFocused = false
-                        Task { await viewModel.captchaSMS() }
-                    } else {
-                        withAnimation {
-                            viewModel.showNeedAgree = true
-                        }
-                    }
-                } label: {
-                    HStack {
-                        Spacer()
-                        Text("获取短信验证码")
-                        Spacer()
-                    }.padding(.vertical, 12)
-                        .foregroundColor(.white)
-                        .background(Color.accentColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 4.0))
-                }.disabled(appViewModel.checkPhoneNumberFormat ? false : true)
-                
-                HStack(spacing: 0) {
-                    Toggle(" ", isOn: $viewModel.isAgreedEULA).toggleStyle(CheckboxToggleStyle()).padding(.trailing, 2)
-                    Group {
-                        Text("已阅读并同意")
-                        Link("“用户协议”", destination: URL(string: "https://baidu.com")!)
-                        Text("和")
-                        Link("“隐私政策”", destination: URL(string: "https://baidu.com")!)
-                    }.font(.caption2)
-                }.padding(.vertical)
-                Spacer()
-                VStack {
-                    Button { } label: {
-                        HStack {
+        NavigationStack {
+            ZStack {
+                ScrollView {
+                    VStack(spacing: 40) {
+                        HStack(alignment: .center) {
+                            Image("chuangqi-logo").resizable()
+                                .frame(width: 40, height: 40)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                                .padding(.top)
+                            Text("登录体验更多精彩").font(.title)
                             Spacer()
-                            Label("Sign in with Apple", systemImage: "apple.logo").padding(.vertical, 10)
-                                .padding(.horizontal)
-                            Spacer()
-                        }.foregroundColor(colorScheme == .dark ? .black : .white)
-                            .background(Color.primary)
-                            .clipShape(RoundedRectangle(cornerRadius: 4.0))
-                    }
-                    NavigationLink(destination: {
-                        ZstuSsoLoginView(viewModel: viewModel)
-                            .onChange(of: viewModel.finishLogin) { status in
-                                if status {
-                                    dismiss()
+                        }
+                        VStack {
+                            HStack {
+                                Picker("区号", selection: .constant(0)) {
+                                    Text("+86")
+                                }
+                                TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
+                                    .focused($isFocused)
+                            }
+                            Divider()
+                        }
+                        Button {
+                            if viewModel.isAgreedEULA {
+                                isFocused = false
+                                Task { await viewModel.captchaSMS() }
+                            } else {
+                                withAnimation {
+                                    viewModel.showNeedAgree = true
                                 }
                             }
-                    }, label: {
+                        } label: {
+                            HStack {
+                                Spacer()
+                                Text("获取短信验证码")
+                                Spacer()
+                            }.padding(.vertical, 12)
+                                .foregroundColor(.white)
+                                .background(Color.accentColor)
+                                .clipShape(RoundedRectangle(cornerRadius: 4.0))
+                        }.disabled(appViewModel.checkPhoneNumberFormat ? false : true)
+                    }
+                    HStack(spacing: 0) {
+                        Toggle(" ", isOn: $viewModel.isAgreedEULA).toggleStyle(CheckboxToggleStyle()).padding(.trailing, 2)
+                        Group {
+                            Text("已阅读并同意")
+                            Link("“用户协议”", destination: URL(string: "https://baidu.com")!)
+                            Text("和")
+                            Link("“隐私政策”", destination: URL(string: "https://baidu.com")!)
+                        }.font(.caption2)
+                    }.padding(.vertical)
+                    HStack(spacing: 30) {
+                        NavigationLink (value: LoginViewModel.LoginMethod.email) {
+                            Image(systemName: "envelope.fill")
+                                .imageScale(.large)
+                        }.buttonStyle(.bordered)
+                        Button { } label: {
+                            Image(systemName: "person.text.rectangle.fill")
+                                .imageScale(.large)
+                        }.buttonStyle(.bordered)
+                    }
+                //  Unsure component, may be deleted in the near future
+                    .navigationDestination(for: LoginViewModel.LoginMethod.self) { method in
+                        switch method {
+                        case .email:
+                            EmptyView()
+                        default:
+                            EmptyView()
+                        }
+                    }
+                }
+                VStack {
+                    Spacer()
+                    VStack {
+                        Button { } label: {
+                            HStack {
+                                Spacer()
+                                Label("Sign in with Apple", systemImage: "apple.logo").padding(.vertical, 10)
+                                    .padding(.horizontal)
+                                Spacer()
+                            }.foregroundColor(colorScheme == .dark ? .black : .white)
+                                .background(Color.primary)
+                                .clipShape(RoundedRectangle(cornerRadius: 4.0))
+                        }
+                        NavigationLink(destination: {
+                            ZstuSsoLoginView(viewModel: viewModel)
+                                .onChange(of: viewModel.finishLogin) { status in
+                                    if status {
+                                        dismiss()
+                                    }
+                                }
+                        }, label: {
+                            HStack {
+                                Spacer()
+                                Label("zstu sso", systemImage: "link").padding(.vertical, 10)
+                                    .padding(.horizontal)
+                                Spacer()
+                            }.foregroundColor(.white)
+                                .background(Color.init(red: 0.25, green: 0.421875, blue: 0.667968))
+                                .clipShape(RoundedRectangle(cornerRadius: 4.0))
+                        }).disabled(true).opacity(0.5)
+                            .onTapGesture {
+                                Task {
+                                    if !viewModel.showSsoLoginMethodNotAllowedTip {
+                                        await viewModel.checkSsoLoginAvailable()
+                                    }
+                                }
+                            }
+                            .overlay {
+                                if !viewModel.isSsoLoginAvailable {
+                                    if viewModel.showSsoLoginMethodNotAllowedTip {
+                                        Text("⚠️ 目前不可用").animation(.easeInOut)
+                                            .foregroundColor(.white)
+                                            .bold()
+                                    }
+                                }
+                            }
+                    }.frame(maxWidth: 320)
+                }
+                if viewModel.showNeedAgree {
+                    VStack {
+                        Text("asdf")
                         HStack {
-                            Spacer()
-                            Label("zstu sso", systemImage: "link").padding(.vertical, 10)
-                                .padding(.horizontal)
-                            Spacer()
-                        }.foregroundColor(.white)
-                            .background(Color.init(red: 0.25, green: 0.421875, blue: 0.667968))
-                            .clipShape(RoundedRectangle(cornerRadius: 4.0))
-                    })
-                }.frame(maxWidth: 320)
-            }.padding().ignoresSafeArea(.keyboard, edges: .bottom)
+                            Button("agree") {
+                                viewModel.isAgreedEULA = true
+                                viewModel.showNeedAgree.toggle()
+                            }
+                        }
+                    }.frame(minWidth: 100, minHeight: 60)
+                        .background(Color.green)
+                }
+            }
+                .padding().ignoresSafeArea(.keyboard, edges: .bottom)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button { appViewModel.cancelLogin() } label: {
@@ -101,21 +152,8 @@ struct LoginView: View {
                         }.foregroundColor(.secondary)
                     }
                 }
-                .overlay {
-                    if viewModel.showNeedAgree {
-                        VStack {
-                            Text("asdf")
-                            HStack {
-                                Button("agree") {
-                                    viewModel.isAgreedEULA = true
-                                    viewModel.showNeedAgree.toggle()
-                                }
-                            }
-                        }.frame(minWidth: 100, minHeight: 60)
-                            .background(Color.green)
-                    }
-                }
-        }.sheet(isPresented: $viewModel.showLoginDebugDetail) { ZstuSsoLoginDebugDetailView(viewModel: viewModel) }
+        }
+            .sheet(isPresented: $viewModel.showLoginDebugDetail) { ZstuSsoLoginDebugDetailView(viewModel: viewModel) }
             .alert(isPresented: $viewModel.isLoginFailed, error: viewModel.loginError) {
                 Text("OK")
             }
@@ -130,8 +168,8 @@ struct RegisterView: View {
     }
 }
 
-struct PhoneNumberLoginView: View {
-    @EnvironmentObject var phoneNumberViewModel: AppViewModel
+struct EmailLoginView: View {
+    @ObservedObject var viewModel: LoginViewModel
     
     var body: some View {
         Text("")

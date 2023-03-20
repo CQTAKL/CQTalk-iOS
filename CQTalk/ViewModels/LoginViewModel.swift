@@ -2,7 +2,7 @@
 //  LoginViewModel.swift
 //  CQTalk
 //
-//  Created by 陈驰坤 on 2022/11/14.
+//  Created by Haren on 2022/11/14.
 //
 
 import SwiftUI
@@ -25,6 +25,10 @@ import JavaScriptCore
         var data: `Data` = Data()
     }
     
+    enum LoginMethod {
+        case phoneNumber, email, kyc, sso, apple
+    }
+    
     enum LoginError: LocalizedError {
         case wrongUsernameOrPassword, unknownError, timeOut
         
@@ -38,10 +42,6 @@ import JavaScriptCore
                 return "请求超时，请检查网络状态"
             }
         }
-    }
-    
-    enum LoginMethod {
-        case phoneNumber, sso, email, wechat, qq, weibo
     }
     
     @Published var isLoginFailed = false
@@ -58,6 +58,12 @@ import JavaScriptCore
     @Published var finishLogin: Bool = false
     @Published var isFocused: Bool = false
     
+    @Published var loginMethod: LoginMethod?
+    
+//  因为直接随意调用学校接口可能会被**请喝茶**，所以我们暂时添加这个属性，用来确认未来是否有可能再次启用SSO登录功能
+    @Published var isSsoLoginAvailable = false
+    @Published var showSsoLoginMethodNotAllowedTip = false
+    
     @AppStorage("Nickname") var nickname = ""
     @AppStorage("StuID") var stuid = ""
     @AppStorage("Password") var password = ""
@@ -68,6 +74,16 @@ import JavaScriptCore
     private func loginHasFailed(becauseOf error: LoginError) {
         loginError = error
         isLoginFailed = true
+    }
+    
+    func checkSsoLoginAvailable() async {
+        self.isSsoLoginAvailable = false
+        self.showSsoLoginMethodNotAllowedTip = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation {
+                self.showSsoLoginMethodNotAllowedTip.toggle()
+            }
+        }
     }
     
     func login() async {
@@ -84,7 +100,9 @@ import JavaScriptCore
         let session = URLSession(configuration: configuration)
         
         defer {
+        //  认证完成后默认清理所有Cookie
             session.configuration.httpCookieStorage?.removeCookies(since: Date.distantPast)
+        //  刷新动画，结束登录中状态
             withAnimation { isLogging = false }
         }
         withAnimation { isLogging = true }
