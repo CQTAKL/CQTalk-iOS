@@ -58,7 +58,7 @@ import JavaScriptCore
     @Published var finishLogin: Bool = false
     @Published var isFocused: Bool = false
     
-    @Published var loginMethod: LoginMethod?
+    @Published var loginMethod: LoginMethod = .phoneNumber
     
 //  因为直接随意调用学校接口可能会被**请喝茶**，所以我们暂时添加这个属性，用来确认未来是否有可能再次启用SSO登录功能
     @Published var isSsoLoginAvailable = false
@@ -68,8 +68,22 @@ import JavaScriptCore
     @AppStorage("StuID") var stuid = ""
     @AppStorage("Password") var password = ""
     @AppStorage("PhoneNumber") var phoneNumber = ""
+    @AppStorage("EmailAdress") var emailAdress = ""
     
     @Environment(\.dismiss) private var dismiss
+    
+    var loginButtonText: LocalizedStringKey {
+        switch self.loginMethod {
+        case .phoneNumber:
+            return "获取短信验证码"
+        case .email:
+            return "获取邮箱验证码"
+        case .kyc:
+            return "继续"
+        default:
+            return "Error"
+        }
+    }
     
     private func loginHasFailed(becauseOf error: LoginError) {
         loginError = error

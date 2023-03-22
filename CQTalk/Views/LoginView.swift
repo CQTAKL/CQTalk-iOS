@@ -24,15 +24,32 @@ struct LoginView: View {
                             Text("登录体验更多精彩").font(.title)
                             Spacer()
                         }
-                        VStack {
-                            HStack {
-                                Picker("区号", selection: .constant(0)) {
-                                    Text("+86")
+                        if viewModel.loginMethod == .phoneNumber {
+                        //  手机验证码登录
+                            VStack {
+                                HStack {
+                                    Picker("区号", selection: .constant(0)) {
+                                        Text("+86")
+                                    }
+                                    TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
+                                        .focused($isFocused)
                                 }
-                                TextField("请输入手机号", text: $appViewModel.model.styledPhoneNumber)
-                                    .focused($isFocused)
+                                Divider()
+                            }.transition(.opacity.combined(with: .slide))
+                        } else if viewModel.loginMethod == .email {
+                        //  邮箱登录
+                            VStack {
+                                HStack {
+                                    Picker("区号", selection: .constant(0)) {
+                                        Text("mail")
+                                    }
+                                    TextField("请输入邮箱", text: $viewModel.emailAdress)
+                                        .autocorrectionDisabled(true)
+                                        .textInputAutocapitalization(.never)
+                                        .focused($isFocused)
+                                }
+                                Divider()
                             }
-                            Divider()
                         }
                         Button {
                             if viewModel.isAgreedEULA {
@@ -46,7 +63,7 @@ struct LoginView: View {
                         } label: {
                             HStack {
                                 Spacer()
-                                Text("获取短信验证码")
+                                Text(viewModel.loginButtonText)
                                 Spacer()
                             }.padding(.vertical, 12)
                                 .foregroundColor(.white)
@@ -64,14 +81,33 @@ struct LoginView: View {
                         }.font(.caption2)
                     }.padding(.vertical)
                     HStack(spacing: 30) {
-                        NavigationLink (value: LoginViewModel.LoginMethod.email) {
-                            Image(systemName: "envelope.fill")
-                                .imageScale(.large)
-                        }.buttonStyle(.bordered)
+                        if viewModel.loginMethod != .email {
+                            Button {
+                                withAnimation {
+                                    viewModel.loginMethod = .email
+                                }
+                            } label: {
+                                Image(systemName: "envelope.fill")
+                                    .imageScale(.large)
+                            }.buttonStyle(.bordered)
+                                .transition(.move(edge: .leading))
+                        }
+                        
                         Button { } label: {
                             Image(systemName: "person.text.rectangle.fill")
                                 .imageScale(.large)
                         }.buttonStyle(.bordered)
+                        if viewModel.loginMethod != .phoneNumber {
+                            Button {
+                                withAnimation {
+                                    viewModel.loginMethod = .phoneNumber
+                                }
+                            } label: {
+                                Image(systemName: "ellipsis.message.fill")
+                                    .imageScale(.large)
+                            }.buttonStyle(.bordered)
+                                .transition(.move(edge: .trailing))
+                        }
                     }
                 //  Unsure component, may be deleted in the near future
                     .navigationDestination(for: LoginViewModel.LoginMethod.self) { method in
